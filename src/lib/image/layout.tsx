@@ -16,38 +16,33 @@ export function buildLayout({
   return (
     <div
       style={{
+        display: 'flex',
         width,
         height,
-        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '80px',
-        background,
-        color: 'white',
+        padding: 80,
         textAlign: 'center',
+        color: 'white',
         fontFamily: 'Arial',
-        position: 'relative',
+
+        // 🔥 overlay integrado
+        background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), ${background}`,
       }}
     >
-      {/* Overlay */}
       <div
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width,
-          height,
-          background: 'rgba(0,0,0,0.4)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
-      />
-
-      <div style={{ zIndex: 1 }}>
+      >
         <p
           style={{
             fontSize: 64,
             lineHeight: 1.3,
-            wordWrap: 'break-word',
+            marginBottom: 40,
           }}
         >
           {texto}
@@ -56,7 +51,6 @@ export function buildLayout({
         <p
           style={{
             fontSize: 36,
-            marginTop: 40,
           }}
         >
           {cita}
